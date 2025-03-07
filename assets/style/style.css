@@ -10,6 +10,7 @@ main {
   display: flex;
   place-content: center;
   align-items: center;
+  background-color: gray;
 }
 
 #pop-toast-container {
