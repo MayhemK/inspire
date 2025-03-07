@@ -1,4 +1,5 @@
 import { AppState } from "../AppState.js"
+import { api } from "../utils/Axios.js"
 
 export class Todo {
   constructor(data) {
@@ -8,6 +9,14 @@ export class Todo {
     this.id = data.id
   }
 
+  async createTodo(formData) {
+    const response = await api.post('api/todos', formData)
+    console.log('creaded todo task');
+    const newTodo = new Todo(response.data)
+    AppState.todo.push(newTodo)
+
+  }
+
   get TodoCard() {
     return `
       <li class="list-group-item">
@@ -15,13 +24,5 @@ export class Todo {
         <label class="form-check-label" for="firstCheckbox">${this.description}</label>
       </li>
     `
-  }
-
-  async createTodo(formData) {
-    const response = await api.post('api/todos', formData)
-    console.log('creaded todo task');
-    const newTodo = new Todo(response.data)
-    AppState.todo.push(newTodo)
-
   }
 }

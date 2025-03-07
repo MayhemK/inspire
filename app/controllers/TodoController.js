@@ -21,6 +21,8 @@ export class TodoController {
     listElem.innerHTML = content
   }
 
+  // drawDelete()
+
 
   async getTodos() {
     try {
@@ -43,6 +45,20 @@ export class TodoController {
       console.log(error, 'whump whump');
 
       Pop.error(error)
+    }
+  }
+
+  async deleteTodo(todoId) {
+    try {
+      const confirmed = await Pop.confirm('Are you sure?', '', 'yerp', 'nah')
+      if (!confirmed) {
+        return
+      }
+      await todoService.deleteTodo(todoId)
+    } catch (error) {
+      console.error('nah fam', error);
+      Pop.error(error, '😭 could not delete task 😭')
+
     }
   }
 }
