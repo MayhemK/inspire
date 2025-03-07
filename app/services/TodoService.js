@@ -5,8 +5,10 @@ import { Todo } from "../models/Todo.js";
 
 class TodoService {
   async deleteTodo(todoId) {
-    const response = await api.delete('api/todos/${todoId}')
+    const response = await api.delete(`api/todos/${todoId}`)
     console.log('deleted task', response.data);
+    console.log(todoId);
+
 
   }
   async getTodo() {

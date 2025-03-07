@@ -14,7 +14,6 @@ export class Todo {
     console.log('creaded todo task');
     const newTodo = new Todo(response.data)
     AppState.todo.push(newTodo)
-
   }
 
   get TodoCard() {
@@ -22,6 +21,7 @@ export class Todo {
       <li class="list-group-item">
         <input class="form-check-input me-1" type="checkbox" value="${this.completed}" id="firstCheckbox">
         <label class="form-check-label" for="firstCheckbox">${this.description}</label>
+        <button onclick=app.todoController.deleteTodo('${this.id}') class="delete-buttom btn btn-danger">Delete</button>
       </li>
     `
   }
