@@ -8,7 +8,9 @@ class TodoService {
     const response = await api.delete(`api/todos/${todoId}`)
     console.log('deleted task', response.data);
     console.log(todoId);
-
+    const todo = AppState.todo
+    const todoIndex = todo.findIndex(todo => todo.id == todoId)
+    todo.splice(todoIndex, 1)
 
   }
   async getTodo() {
