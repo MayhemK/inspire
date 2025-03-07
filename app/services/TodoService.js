@@ -10,6 +10,15 @@ class TodoService {
     const todos = response.data.map(pojo => new Todo(pojo))
     AppState.todo = todos
   }
+
+  async createTodo(todoData) {
+    const response = await api.post('api/todos', todoData)
+    console.log('created todo task', response.data);
+    const todo = new Todo(response.data)
+    AppState.todo.push(todo)
+    console.log(response.data);
+
+  }
 }
 
 export const todoService = new TodoService()

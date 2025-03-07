@@ -37,6 +37,11 @@
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
           <div class="offcanvas-body">
+            <div>
+              <label for="todoTasks" class="form-label">Enter Todo Task Here</label>
+              <input type="text" class="form-control" id="todoTasks">
+              <button type="submit" class="btn btn-primary" onclick="app.TodoController.createTodo()">Submit</button>
+            </div>
             <ul class="list-group" id="todoTasks">
               <!-- <li class="list-group-item">
                 <input class="form-check-input me-1" type="checkbox" value="" id="firstCheckbox">
