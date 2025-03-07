@@ -11,8 +11,8 @@ class TodoService {
     AppState.todo = todos
   }
 
-  async createTodo(todoData) {
-    const response = await api.post('api/todos', todoData)
+  async createTodo(formData) {
+    const response = await api.post('api/todos', formData)
     console.log('created todo task', response.data);
     const todo = new Todo(response.data)
     AppState.todo.push(todo)

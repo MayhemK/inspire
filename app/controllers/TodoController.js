@@ -34,10 +34,14 @@ export class TodoController {
   async createTodo() {
     try {
       event.preventDefault()
-      const inputElem = event.target
-      const inputData = getFormData(inputElem)
-      await todoService.createTodo(inputData)
+      const formElem = event.target
+      const formData = getFormData(formElem)
+      console.log(formData);
+      await todoService.createTodo(formData)
+
     } catch (error) {
+      console.log(error, 'whump whump');
+
       Pop.error(error)
     }
   }
