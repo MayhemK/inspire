@@ -14,10 +14,11 @@ export class TodoController {
   }
 
   drawTodo() {
+    console.log('drawTodo called')
     event.preventDefault()
-    const todo = AppState.todo
+    const task = AppState.todo
     let content = ''
-    todo.forEach(todo => content += todo.TodoCard)
+    task.forEach(todo => content += todo.TodoCard)
     const listElem = document.getElementById('todoTasks')
     listElem.innerHTML = content
   }

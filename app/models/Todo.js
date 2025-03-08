@@ -14,15 +14,18 @@ export class Todo {
     console.log('creaded todo task');
     const newTodo = new Todo(response.data)
     AppState.todo.push(newTodo)
+    console.log(`${this.completed}`);
+
   }
 
   get TodoCard() {
     return `
       <li class="list-group-item">
-        <input class="form-check-input me-1" type="checkbox" value="${this.completed}" id="todoCheckbox">
+        <input class="form-check-input me-1" type="checkbox" value="${this.completed}" id="todoCheckbox" onclick="app.todoController.toggleTodo('${this.id}')">
         <label class="form-check-label" for="todoCheckbox">${this.description}</label>
         <button onclick=app.todoController.deleteTodo('${this.id}') class="delete-buttom btn btn-danger">Delete</button>
       </li>
     `
   }
 }
+

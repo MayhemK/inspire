@@ -3,13 +3,15 @@ import { AppState } from "../AppState.js";
 import { Todo } from "../models/Todo.js";
 
 
+
 class TodoService {
   async toggleTodo(todoId) {
+    event.preventDefault
     const todo = AppState.todo.find(todo => todo.id == todoId)
     todo.completed = !todo.completed
     const response = await api.put(`api/todos/${todoId}`, todo)
     console.log(response.data);
-    AppState.emit('todo')
+    // AppState.emit('todo')
 
   }
   async deleteTodo(todoId) {
@@ -29,10 +31,11 @@ class TodoService {
 
   async createTodo(formData) {
     const response = await api.post('api/todos', formData)
-    console.log('created todo task', response.data);
+    // console.log('created todo task', response.data);
     const todo = new Todo(response.data)
     AppState.todo.push(todo)
     console.log(response.data);
+
 
   }
 }
