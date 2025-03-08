@@ -20,23 +20,11 @@ export class Todo {
 
   get TodoCard() {
     return `
-      <li class="list-group-item">
-        <input class="form-check-input me-1" type="checkbox" value="${this.completed}" id="todoCheckbox" ${this.completed ? 'checked' : ''} onclick="app.todoController.toggleTodo('${this.id}')">
-        <label class="form-check-label" for="todoCheckbox">${this.description}</label>
-        <button onclick=app.todoController.deleteTodo('${this.id}') class="delete-buttom btn btn-danger">Delete</button>
+      <li class="list-group-item d-flex justify-content-between">
+        <input class="form-check-input me-1 " type="checkbox" value="${this.completed}" id="todoCheckbox" ${this.completed ? 'checked' : ''} onclick="app.todoController.toggleTodo('${this.id}')">
+        <label class="form-check-label ${this.completed ? 'text-decoration-line-through' : ''}" for="todoCheckbox">${this.description}</label>
+        <button onclick=app.todoController.deleteTodo('${this.id}') class="delete-buttom btn btn-danger ${this.completed ? '' : 'disabled'}"><span class="mdi mdi-delete"></span></button>
       </li>
     `
   }
 }
-
-
-// get TodoCard() {
-//   const isChecked = this.completed ? 'checked' : '';
-//   return `
-//     <li class="list-group-item">
-//       <input class="form-check-input me-1" type="checkbox" ${isChecked} id="todoCheckbox" onclick="app.todoController.toggleTodo('${this.id}')">
-//       <label class="form-check-label" for="todoCheckbox">${this.description}</label>
-//       <button onclick=app.todoController.deleteTodo('${this.id}') class="delete-buttom btn btn-danger">Delete</button>
-//     </li>
-//   `;
-// }
