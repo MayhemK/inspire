@@ -12,7 +12,6 @@ class TodoService {
     const response = await api.put(`api/todos/${todoId}`, todo)
     console.log(response.data);
     // AppState.emit('todo')
-
   }
   async deleteTodo(todoId) {
     const response = await api.delete(`api/todos/${todoId}`)
@@ -35,8 +34,6 @@ class TodoService {
     const todo = new Todo(response.data)
     AppState.todo.push(todo)
     console.log(response.data);
-
-
   }
 }
 

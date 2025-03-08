@@ -31,7 +31,9 @@ export class TodoController {
   // drawDelete()
   async toggleTodo(todoId) {
     try {
+      // const todo = AppState.todo.find(todo => todo.id === todoId)
       await todoService.toggleTodo(todoId)
+      Pop.success('toggle successfully')
     } catch (error) {
       console.error(error);
 
