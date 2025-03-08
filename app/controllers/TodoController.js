@@ -7,13 +7,12 @@ import { getFormData } from "../utils/FormHandler.js";
 
 export class TodoController {
   constructor() {
-    console.log('TodoController Loaded!');
     AppState.on('identity', this.getTodos)
-    AppState.on('todo', this.drawTodo)
+    AppState.on('identity', this.drawTodo)
+    AppState.on('identity', this.drawTodoButton)
   }
 
   drawTodo() {
-    event.preventDefault()
     const todo = AppState.todo
     let content = ''
     todo.forEach(todo => content += todo.TodoCard)
@@ -21,15 +20,26 @@ export class TodoController {
     listElem.innerHTML = content
   }
 
-  // drawDelete()
+  drawTodoButton() {
+    document.getElementById('taskPlaceholder').classList.add('d-none')
+    document.getElementById('taskButton').classList.remove('d-none')
+  }
 
+  // drawDelete()
+  async toggleTodo(todoId) {
+    try {
+      await todoService.toggleTodo(todoId)
+    } catch (error) {
+      console.error(error);
+
+    }
+  }
 
   async getTodos() {
     try {
       await todoService.getTodo()
     } catch (error) {
       console.error('could not do', error);
-
     }
   }
 
@@ -40,10 +50,8 @@ export class TodoController {
       const formData = getFormData(formElem)
       console.log(formData);
       await todoService.createTodo(formData)
-
     } catch (error) {
       console.log(error, 'whump whump');
-
       Pop.error(error)
     }
   }

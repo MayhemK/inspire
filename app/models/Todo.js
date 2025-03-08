@@ -19,7 +19,7 @@ export class Todo {
   get TodoCard() {
     return `
       <li class="list-group-item">
-        <input class="form-check-input me-1" type="checkbox" value="${this.completed}" id="firstCheckbox">
+        <input class="form-check-input me-1" type="checkbox" value="${this.completed}" id="firstCheckbox" onclick="app.todoController.toggleTodo('${this.id}')">
         <label class="form-check-label" for="firstCheckbox">${this.description}</label>
         <button onclick=app.todoController.deleteTodo('${this.id}') class="delete-buttom btn btn-danger">Delete</button>
       </li>
