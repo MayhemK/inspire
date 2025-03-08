@@ -8,12 +8,13 @@ import { getFormData } from "../utils/FormHandler.js";
 export class TodoController {
   constructor() {
     AppState.on('identity', this.getTodos)
-    AppState.on('identity', this.drawTodo)
+    // AppState.on('identity', this.drawTodo)
     AppState.on('todo', this.drawTodo)
     AppState.on('identity', this.drawTodoButton)
   }
 
   drawTodo() {
+    event.preventDefault()
     const todo = AppState.todo
     let content = ''
     todo.forEach(todo => content += todo.TodoCard)
