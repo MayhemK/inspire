@@ -9,6 +9,7 @@ export class TodoController {
   constructor() {
     AppState.on('identity', this.getTodos)
     AppState.on('identity', this.drawTodo)
+    AppState.on('todo', this.drawTodo)
     AppState.on('identity', this.drawTodoButton)
   }
 
