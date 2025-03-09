@@ -2,6 +2,7 @@ import { AppState } from "../AppState.js";
 import { todoService } from "../services/TodoService.js";
 import { Pop } from "../utils/Pop.js";
 import { getFormData } from "../utils/FormHandler.js";
+import { api } from "../utils/Axios.js";
 
 
 
@@ -12,6 +13,8 @@ export class TodoController {
     AppState.on('todo', this.drawTodo)
     AppState.on('identity', this.drawTodoButton)
   }
+
+
 
   drawTodo() {
     console.log('drawTodo called')
@@ -26,12 +29,6 @@ export class TodoController {
   drawTodoButton() {
     document.getElementById('taskPlaceholder').classList.add('d-none')
     document.getElementById('taskButton').classList.remove('d-none')
-  }
-
-  drawUncompleteCount() {
-    const tasks = AppState.todo
-    const taskCountElem = document.getElementById('taskCount')
-    taskCountElem.setAttribute(`${tasks.length}`)
   }
 
   async toggleTodo(todoId) {

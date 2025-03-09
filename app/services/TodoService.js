@@ -13,6 +13,7 @@ class TodoService {
     console.log(response.data);
     // AppState.emit('todo')
   }
+
   async deleteTodo(todoId) {
     const response = await api.delete(`api/todos/${todoId}`)
     console.log('deleted task', response.data);
@@ -20,8 +21,8 @@ class TodoService {
     const todo = AppState.todo
     const todoIndex = todo.findIndex(todo => todo.id == todoId)
     todo.splice(todoIndex, 1)
-
   }
+
   async getTodo() {
     const response = await api.get('api/todos')
     const todos = response.data.map(pojo => new Todo(pojo))
