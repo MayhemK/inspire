@@ -28,12 +28,17 @@ export class TodoController {
     document.getElementById('taskButton').classList.remove('d-none')
   }
 
-  // drawDelete()
+  drawUncompleteCount() {
+    const tasks = AppState.todo
+    const taskCountElem = document.getElementById('taskCount')
+    taskCountElem.setAttribute(`${tasks.length}`)
+  }
+
   async toggleTodo(todoId) {
     try {
-      // const todo = AppState.todo.find(todo => todo.id === todoId)
       await todoService.toggleTodo(todoId)
       Pop.success('toggle successfully')
+      this.getTodos()
     } catch (error) {
       console.error(error);
 

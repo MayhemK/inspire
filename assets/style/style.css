@@ -20,8 +20,9 @@ main {
   align-items: end;
 }
 
-.delete-button {
-  display: none;
+.btn {
+  padding-top: 0.1rem;
+  padding-bottom: 0.1rem
 }
 
 .completed {

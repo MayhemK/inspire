@@ -44,10 +44,14 @@
               <button type="submit" class="btn btn-primary">Submit</button>
             </form>
             <ul class="list-group" id="todoTasks">
-              <!-- <li class="list-group-item">
-                <input class="form-check-input me-1" type="checkbox" value="" id="todoCheckbox">
-                <label class="form-check-label" for="todoCheckbox">First checkbox</label>
-                <button id="deleteButton" class="delete-buttom">Delete</button>
+              <!-- <li class="list-group-item d-flex justify-content-between align-item-center">
+                <input class="form-check-input me-1 " type="checkbox" value="${this.completed}" id="todoCheckbox"
+                  ${this.completed ? 'checked' : '' } onclick="app.todoController.toggleTodo('${this.id}')">
+                <label class="form-check-label ${this.completed ? 'text-decoration-line-through' : ''}"
+                  for="todoCheckbox">${this.description}</label>
+                ${this.completed ? `<button
+                  onclick=app.todoController.deleteTodo('${this.id}') class=" btn btn-danger "><span class="mdi mdi-delete"></span></button>` : ''
+              }
               </li> -->
             </ul>
           </div>

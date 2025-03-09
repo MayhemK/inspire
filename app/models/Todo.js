@@ -20,11 +20,16 @@ export class Todo {
 
   get TodoCard() {
     return `
-      <li class="list-group-item d-flex justify-content-between">
+      <li class="list-group-item d-flex justify-content-between align-items-center">
         <input class="form-check-input me-1 " type="checkbox" value="${this.completed}" id="todoCheckbox" ${this.completed ? 'checked' : ''} onclick="app.todoController.toggleTodo('${this.id}')">
         <label class="form-check-label ${this.completed ? 'text-decoration-line-through' : ''}" for="todoCheckbox">${this.description}</label>
-        <button onclick=app.todoController.deleteTodo('${this.id}') class="delete-buttom btn btn-danger ${this.completed ? '' : 'disabled'}"><span class="mdi mdi-delete"></span></button>
+        <button onclick=app.todoController.deleteTodo('${this.id}') class=" btn ${this.completed ? 'btn-danger' : 'disabled btn-outline-secondary'}"><span class="mdi mdi-delete"></span></button>
       </li>
-    `
+  `
   }
 }
+
+
+
+
+// ${this.completed ? `<button onclick=app.todoController.deleteTodo('${this.id} ') class=" btn btn-danger "><span class="mdi mdi-delete"></span></button>` : ''}
