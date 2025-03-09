@@ -36,6 +36,9 @@ class TodoService {
     AppState.todo.push(todo)
     console.log(response.data);
   }
+
+  async
+
 }
 
 export const todoService = new TodoService()

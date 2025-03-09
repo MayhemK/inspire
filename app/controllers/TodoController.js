@@ -12,6 +12,7 @@ export class TodoController {
     // AppState.on('identity', this.drawTodo)
     AppState.on('todo', this.drawTodo)
     AppState.on('identity', this.drawTodoButton)
+    AppState.on('todo', this.drawCompleted)
   }
 
 
@@ -29,6 +30,15 @@ export class TodoController {
   drawTodoButton() {
     document.getElementById('taskPlaceholder').classList.add('d-none')
     document.getElementById('taskButton').classList.remove('d-none')
+  }
+
+  drawCompleted() {
+    const doneList = AppState.todo;
+    const truelistcheck = doneList.filter(done => done.completed === false);
+    const truelist = truelistcheck.length;
+    const taskElem = document.getElementById('taskCount')
+    taskElem.innerText = 'Tasks to complete:' + truelist.toString()
+
   }
 
   async toggleTodo(todoId) {
