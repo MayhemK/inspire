@@ -1,4 +1,5 @@
 import { AppState } from "../AppState.js";
+import { Image } from "../models/Image.js";
 import { imageService } from "../services/ImageService.js";
 import { Pop } from "../utils/Pop.js";
 
@@ -6,6 +7,7 @@ export class ImageController {
   constructor() {
     console.log('Images Loaded');
     this.getImage()
+    AppState.on('Image', this.drawImage)
   }
 
   async getImage() {
@@ -23,7 +25,6 @@ export class ImageController {
     content += image.thing
     const imageElem = document.getElementById('image')
     imageElem.innerHTML = content
-
-    // document.getElementById('img').innerHTML = image
+    document.body.style.backgroundImage = `url(${image.full})`
   }
 }

@@ -4,8 +4,8 @@ import { Pop } from "../utils/Pop.js";
 
 export class WeatherController {
   constructor() {
-    console.log('Weather Loaded');
     this.getWeather()
+    console.log('Weather Loaded');
   }
   async getWeather() {
     try {

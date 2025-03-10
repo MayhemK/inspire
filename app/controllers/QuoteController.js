@@ -6,11 +6,11 @@ export class QuoteController {
   constructor() {
     console.log('Quotes Loaded');
     this.getQuote()
+    AppState.on('Quote', this.drawQuote)
   }
   async getQuote() {
     try {
       await quoteService.getQuote()
-      Pop.success('quote received')
     } catch (error) {
       Pop.error(error)
       console.error('dun goofed', error);

@@ -8,6 +8,8 @@ class QuoteService {
     console.log('got quote', response.data);
     const quote = new Quote(response.data)
     AppState.Quote = quote
+    console.log(AppState.Quote);
+
 
 
 
