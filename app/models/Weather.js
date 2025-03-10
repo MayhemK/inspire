@@ -19,13 +19,18 @@ export class Weather {
 
   get tile() {
     return `
-    <div class="">
-              <h1 id="temperature" >${this.celsius}</h1>
-              <p>${this.main}</p>
-              <div class="sun-icon">
-                <img src="${this.icon}" alt="weather Icon">
-              </div>
-            </div>
+    <div class="container text-center">
+  <div class="row weather-card">
+    <div class="col align-self-start fs-3">
+      ${this.fahrenheit}
+    </div>
+    <img class="col align-self-center" src="${this.icon}" alt="weather Icon">
+    <div class="col align-self-end">
+    ${this.main}
+    </div>
+  </div>
+</div>
+    
     `
   }
 
