@@ -33,8 +33,8 @@ export class ImageController {
     let background = image.thing
     let imageElem = document.getElementById('image')
     imageElem.innerHTML = background
-    document.body.style.setProperty('--background-image', `url(${image.full})`)
-    // document.body.style.backgroundImage = `url(${image.regular})`
+    // document.body.style.setProperty('--background-image', `url(${image.full})`)
+    document.body.style.backgroundImage = `url(${image.regular})`
 
   }
 
