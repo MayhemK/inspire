@@ -6,6 +6,7 @@ export class WeatherController {
   constructor() {
     this.getWeather()
     console.log('Weather Loaded');
+    AppState.on('Weather', this.drawWeather)
   }
   async getWeather() {
     try {

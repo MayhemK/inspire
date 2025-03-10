@@ -1,17 +1,29 @@
 export class Weather {
   constructor(data) {
-    this.temp = data.temp
-    this.icon = data.icon
-    this.main = data.main
+    this.temp = data.main.temp
+    this.icon = data.weather.icon
+    this.main = data.weather[0].main
   }
+
+  get fahrenheit() {
+    return ((this.temp - 273.15) * 9 / 5 + 32).toFixed(0)
+  }
+  get celsius() {
+    return (this.temp - 273.15).toFixed(0)
+
+  }
+
+
+
+
 
   get tile() {
     return `
     <div class="">
-              <h1>${this.temp}</h1>
+              <h1 id="temperature" >${this.celsius}</h1>
               <p>${this.main}</p>
               <div class="sun-icon">
-                <img src="${this.main}" alt="weather Icon">
+                <img src="${this.icon}" alt="weather Icon">
               </div>
             </div>
     `

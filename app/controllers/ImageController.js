@@ -7,7 +7,7 @@ export class ImageController {
   constructor() {
     console.log('Images Loaded');
     this.getImage()
-    AppState.on('Image', this.drawImage)
+    AppState.on('Image', this.drawBackground)
   }
 
   async getImage() {
@@ -19,12 +19,24 @@ export class ImageController {
     }
   }
 
-  drawImage() {
+  // drawImage() {
+  //   const image = AppState.Image
+  //   let content = ''
+  //   content += image.thing
+  //   const imageElem = document.getElementById('image')
+  //   imageElem.innerHTML = content
+  //   document.main.style.backgroundImage = `url(${image.full})`
+  // }
+
+  async drawBackground() {
     const image = AppState.Image
-    let content = ''
-    content += image.thing
-    const imageElem = document.getElementById('image')
-    imageElem.innerHTML = content
-    document.body.style.backgroundImage = `url(${image.full})`
+    let background = image.thing
+    let imageElem = document.getElementById('image')
+    imageElem.innerHTML = background
+    document.body.style.setProperty('--background-image', `url(${image.full})`)
+    // document.body.style.backgroundImage = `url(${image.regular})`
+
   }
+
+
 }

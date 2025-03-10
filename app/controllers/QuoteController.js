@@ -13,7 +13,7 @@ export class QuoteController {
       await quoteService.getQuote()
     } catch (error) {
       Pop.error(error)
-      console.error('dun goofed', error);
+      // console.error('dun goofed', error);
 
 
     }

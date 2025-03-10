@@ -2,7 +2,8 @@ export class Image {
   constructor(data) {
     this.id = data.id
     this.attribution = data.attribution
-    this.small = data.small
+    this.small = data.imgUrls.small
+    this.regular = data.imgUrls.regular
     this.full = data.imgUrls.full
     this.description = data.description
   }
@@ -11,6 +12,8 @@ export class Image {
     return ` 
     <div >
               <img src="${this.full}" class="img-fluid" alt="">
+              <p>${this.attribution}</p>
+              <p>${this.description}</p>
             </div>
     `
   }
