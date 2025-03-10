@@ -24,41 +24,67 @@
   </header>
 
   <main>
-    <nav class="navbar bg-body-tertiary ">
-      <div class="" id="taskPlaceholder">Login to add To-do tasks!</div>
-      <div class="container-fluid d-none" id="taskButton">
-        <a class="navbar-brand" href="#">To-Do List</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
-          aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-          <div class="offcanvas-header">
-            <div class="offcanvas-title fs-5" id="offcanvasNavbarLabel">To-do List</div>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-          </div>
-          <div class="offcanvas-body">
-            <div id="taskCount" class="fs-4"></div>
-            <form onsubmit="app.todoController.createTodo()">
-              <label for="description" class="form-label">Enter To-do Task Here</label>
-              <input type="text" class="form-control" id="description" maxlength="500" name="description">
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-            <ul class="list-group" id="todoTasks">
-              <!-- <li class="list-group-item d-flex justify-content-between align-item-center">
-                <input class="form-check-input me-1 " type="checkbox" value="${this.completed}" id="todoCheckbox"
-                  ${this.completed ? 'checked' : '' } onclick="app.todoController.toggleTodo('${this.id}')">
-                <label class="form-check-label ${this.completed ? 'text-decoration-line-through' : ''}"
-                  for="todoCheckbox">${this.description}</label>
-                ${this.completed ? `<button
-                  onclick=app.todoController.deleteTodo('${this.id}') class=" btn btn-danger "><span class="mdi mdi-delete"></span></button>` : ''
-              }
-              </li> -->
-            </ul>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-2">
+          <div id="weather">
+            <div>weather place</div>
+            <!-- <div class="weather-card">
+              <h1>78° f</h1>
+              <p>Sunny</p>
+              <div class="sun-icon">
+                <img src="" alt="weather Icon">
+              </div>
+            </div> -->
           </div>
         </div>
+        <div class="col-7">
+          <div id="quote">
+            <div>quoteplace</div>
+          </div>
+        </div>
+        <div class="col-3">
+          <nav class="navbar bg-body-tertiary ">
+            <div class="" id="taskPlaceholder">Login to add To-do tasks!</div>
+            <div class="container-fluid d-none" id="taskButton">
+              <a class="navbar-brand" href="#">To-Do List</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                  <div class="offcanvas-title fs-5" id="offcanvasNavbarLabel">To-do List</div>
+                  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                  <div id="taskCount" class="fs-4"></div>
+                  <form onsubmit="app.todoController.createTodo()">
+                    <label for="description" class="form-label">Enter To-do Task Here</label>
+                    <input type="text" class="form-control" id="description" maxlength="500" name="description">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </form>
+                  <ul class="list-group" id="todoTasks">
+                    <!-- <li class="list-group-item d-flex justify-content-between align-item-center">
+                      <input class="form-check-input me-1 " type="checkbox" value="${this.completed}" id="todoCheckbox"
+                        ${this.completed ? 'checked' : '' } onclick="app.todoController.toggleTodo('${this.id}')">
+                      <label class="form-check-label ${this.completed ? 'text-decoration-line-through' : ''}"
+                        for="todoCheckbox">${this.description}</label>
+                      ${this.completed ? `<button
+                        onclick=app.todoController.deleteTodo('${this.id}') class=" btn btn-danger "><span class="mdi mdi-delete"></span></button>` : ''
+                    }
+                    </li> -->
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
       </div>
-    </nav>
+    </div>
+
+
 
   </main>
 

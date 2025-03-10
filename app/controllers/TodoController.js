@@ -18,13 +18,13 @@ export class TodoController {
 
 
   drawTodo() {
-    console.log('drawTodo called')
     event.preventDefault()
     const task = AppState.todo
     let content = ''
     task.forEach(todo => content += todo.TodoCard)
     const listElem = document.getElementById('todoTasks')
     listElem.innerHTML = content
+
   }
 
   drawTodoButton() {
