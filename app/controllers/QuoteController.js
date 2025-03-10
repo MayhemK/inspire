@@ -12,8 +12,8 @@ export class QuoteController {
     try {
       await quoteService.getQuote()
     } catch (error) {
-      Pop.error(error)
-      // console.error('dun goofed', error);
+      Pop.error(error, 'quote')
+      console.error('dun goofed', error);
 
 
     }
@@ -25,7 +25,6 @@ export class QuoteController {
     content += quote.display
     const quoteElem = document.getElementById('quote')
     quoteElem.innerHTML = content
-    console.log(content);
 
   }
 

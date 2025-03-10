@@ -39,3 +39,11 @@ main {
   border-radius: 20%;
   border-color: black;
 }
+
+.hidden {
+  display: none;
+}
+
+.quote-container:hover .hidden {
+  display: block;
+}

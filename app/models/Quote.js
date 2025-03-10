@@ -8,9 +8,11 @@ export class Quote {
 
   get display() {
     return `
+    <div class="quote-container">
     <div>${this.quote}</div>
-    <div>${this.author}</div>
-    <div>${this.source}</div>
+    <div class="hidden">${this.author}</div>
+    <div class="hidden">${this.source}</div>
+    </div>
     `
   }
 }

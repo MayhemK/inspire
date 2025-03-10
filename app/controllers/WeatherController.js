@@ -23,7 +23,6 @@ export class WeatherController {
     content += weather.tile
     const weatherElem = document.getElementById('weather')
     weatherElem.innerHTML = content
-    console.log(content);
 
 
   }
