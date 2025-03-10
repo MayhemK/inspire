@@ -5,8 +5,8 @@ import { Quote } from "../models/Quote.js";
 class QuoteService {
   async getQuote() {
     const response = await api.get('api/quotes')
-    console.log('got  quote', response.data);
-    const quote = response.data.map(pojo => new Quote(pojo))
+    console.log('got quote', response.data);
+    const quote = new Quote(response.data)
     AppState.Quote = quote
 
   }

@@ -1,8 +1,8 @@
 export class Quote {
   constructor(data) {
-    this.quote = data.data.quote
-    this.author = data.data.author
-    this.source = data.data.source
+    this.quote = data.quote
+    this.author = data.author
+    this.source = data.source
 
   }
 

@@ -14,8 +14,8 @@ class ObservableAppState extends EventEmitter {
   todo = []
   /**@type {Image[]} */
   Image = []
-  /**@type {Quote[]} */
-  Quote = []
+  /**@type {Quote} */
+  Quote = null
   /**@type {Weather[]} */
   Weather = []
 
