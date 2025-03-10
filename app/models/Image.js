@@ -9,8 +9,8 @@ export class Image {
 
   get thing() {
     return ` 
-    <div class="img-fluid">
-              <img src="${this.full}" alt="">
+    <div >
+              <img src="${this.full}" class="img-fluid" alt="">
             </div>
     `
   }
