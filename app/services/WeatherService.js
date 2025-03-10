@@ -6,7 +6,7 @@ class WeatherService {
   async getWeather() {
     const response = await api.get('api/weather')
     console.log('got weather', response.data);
-    const weather = response.data.map(pojo => new Weather(pojo))
+    const weather = new Weather(response.data)
     AppState.Weather = weather
   }
 }

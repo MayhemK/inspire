@@ -2,9 +2,15 @@ export class Image {
   constructor(data) {
     this.id = data.id
     this.attribution = data.attribution
-    this.small = data.imgUrls.small
+    this.small = data.small
     this.full = data.imgUrls.full
     this.description = data.description
+  }
+
+  get thing() {
+    return ` 
+    <img src="${this.full}" alt="">
+    `
   }
 
 

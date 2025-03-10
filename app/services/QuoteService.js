@@ -9,6 +9,8 @@ class QuoteService {
     const quote = new Quote(response.data)
     AppState.Quote = quote
 
+
+
   }
 }
 

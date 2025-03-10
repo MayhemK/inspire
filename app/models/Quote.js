@@ -8,9 +8,9 @@ export class Quote {
 
   get display() {
     return `
-    <div>${this.quote}asdf</div>
-    <div>${this.author}asdf</div>
-    <div>${this.source}asdf</div>
+    <div>${this.quote}</div>
+    <div>${this.author}</div>
+    <div>${this.source}</div>
     `
   }
 }

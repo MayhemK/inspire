@@ -19,8 +19,11 @@ export class WeatherController {
   drawWeather() {
     const weather = AppState.Weather
     let content = ''
-    weather.forEach(weather => content += weather.tile)
+    content += weather.tile
     const weatherElem = document.getElementById('weather')
-    weatherElem.innerText = content
+    weatherElem.innerHTML = content
+    console.log(content);
+
+
   }
 }

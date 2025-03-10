@@ -6,7 +6,7 @@ class ImageService {
   async getImage() {
     const response = await api.get('api/images')
     console.log('got image', response.data);
-    const image = response.data.map(pojo => new Image(pojo))
+    const image = new Image(response.data)
     AppState.Image = image
   }
 }

@@ -22,8 +22,11 @@ export class QuoteController {
   drawQuote() {
     const quote = AppState.Quote
     let content = ''
+    content += quote.display
     const quoteElem = document.getElementById('quote')
     quoteElem.innerHTML = content
+    console.log(content);
+
   }
 
 }
